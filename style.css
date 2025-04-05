@@ -32,19 +32,21 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url('images/hero-background.jpg'); /* Your background image */
+    background-image: url('images/263248 (1).jpeg'); /* Your background image */
     background-size: cover;
     background-position: center;
     color: white;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 10%;
+    padding: 0 10%; /* Adjust padding for spacing */
     position: relative;
+    overflow: hidden; /* Prevents content overflow */
 }
 
+/* Dark Overlay for text readability */
 .hero::before {
     content: '';
     position: absolute;
@@ -52,22 +54,51 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
 }
 
+/* Hero Section Text */
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4rem; /* Font size for large screens */
     font-weight: 700;
     z-index: 1;
     animation: fadeIn 2s ease-out;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Font size for large screens */
     z-index: 1;
     margin-top: 15px;
     animation: fadeIn 2s ease-out;
 }
+
+/* Make Hero Section Responsive */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Remove fixed attachment for mobile */
+        height: 60vh; /* Adjust height for mobile screens */
+        padding: 0 5%; /* Reduce padding on smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Reduce heading size for mobile */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust paragraph text size for mobile */
+    }
+}
+
+/* Hero Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /* About Section */
 #about {
